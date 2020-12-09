@@ -7,6 +7,10 @@ class ProfileFormPage extends StatelessWidget {
   const ProfileFormPage({Key key, @required this.appUser}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Edit Profile'),
+      ),
+    );
   }
 }
