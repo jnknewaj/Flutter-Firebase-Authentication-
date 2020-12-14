@@ -1,8 +1,9 @@
 import 'package:authentication/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:authentication/domain/core/app_user.dart';
 import 'package:authentication/injection.dart';
-import 'package:authentication/presentation/profile/profile_form_page.dart';
+import 'package:authentication/presentation/profile/pages/profile_form_page.dart';
 import 'package:authentication/presentation/widgets/bilboard_text.dart';
+import 'package:authentication/presentation/widgets/circular_image_holder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -58,6 +59,12 @@ class _ProfilePageUi extends StatelessWidget {
         padding: const EdgeInsets.all(5.0),
         child: ListView(
           children: [
+            Center(
+              child: CircularImageHolder(
+                imageUrl: appUser.profilePictureUrl,
+                imageSize: 0.7,
+              ),
+            ),
             Text(appUser.name.getOrCrash()),
             Text(appUser.emailAddress.getOrCrash()),
           ],

@@ -147,139 +147,154 @@ class SignInForm extends StatelessWidget {
           return Form(
             autovalidate: state.showErrorMessages,
             child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Stack(
                 children: [
-                  // text
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Text(
-                      "Sign In",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontSize: 35.0,
-                        wordSpacing: 0.1,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: Colors.grey[200]),
-                      ),
-                    ),
-                    child: TextFormField(
-                      autocorrect: false,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Email",
-                        icon: Icon(
-                          Icons.email,
-                          color: Colors.black12,
-                        ),
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: "sofia",
-                        ),
-                      ),
-                      onChanged: (value) => context
-                          .read<SignInFormBloc>()
-                          .add(SignInFormEvent.emailChanged(value)),
-                      validator: (_) => context
-                          .read<SignInFormBloc>()
-                          .state
-                          .emailAddress
-                          .value
-                          .fold(
-                            (f) => f.maybeMap(
-                              invalidEmail: (_) => 'Invalid email',
-                              orElse: () => null,
-                            ),
-                            (_) => null,
-                          ),
-                    ),
-                  ),
-                  // password
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    child: TextFormField(
-                      autocorrect: false,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Password",
-                        icon: Icon(
-                          Icons.vpn_key,
-                          color: Colors.black12,
-                        ),
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: "sofia",
-                        ),
-                      ),
-                      onChanged: (value) => context
-                          .read<SignInFormBloc>()
-                          .add(SignInFormEvent.passwordChanged(value)),
-                      validator: (_) => context
-                          .read<SignInFormBloc>()
-                          .state
-                          .password
-                          .value
-                          .fold(
-                            (f) => f.maybeMap(
-                              shortPassword: (_) => 'Short password',
-                              orElse: () => null,
-                            ),
-                            (_) => null,
-                          ),
-                    ),
-                  ),
-                  MaterialButton(
-                    color: Theme.of(context).buttonColor,
-                    onPressed: () {
-                      context.read<SignInFormBloc>().add(const SignInFormEvent
-                          .signInWithEmailAndPasswordPressed());
-                    },
-                    child: Text('Sign In'),
-                  ),
-                  SizedBox(height: 20.0),
-                  MaterialButton(
-                    color: Colors.red,
-                    onPressed: () {
-                      debugPrint('hihi');
-                      context
-                          .read<SignInFormBloc>()
-                          .add(const SignInFormEvent.signInWithGooglePressed());
-                    },
-                    child: Text(
-                      'Sign In With Google',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Row(
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Dont Have Account?'),
-                      SizedBox(width: 10.0),
-                      InkWell(
+                      // text
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
-                          'Sign Up',
+                          "Sign In",
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0,
-                            color: Colors.cyan[300],
+                            fontWeight: FontWeight.w800,
+                            fontSize: 35.0,
+                            wordSpacing: 0.1,
                           ),
                         ),
-                        onTap: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) => SignUpPage()));
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.grey[200]),
+                          ),
+                        ),
+                        child: TextFormField(
+                          autocorrect: false,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Email",
+                            icon: Icon(
+                              Icons.email,
+                              color: Colors.black12,
+                            ),
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              fontFamily: "sofia",
+                            ),
+                          ),
+                          onChanged: (value) => context
+                              .read<SignInFormBloc>()
+                              .add(SignInFormEvent.emailChanged(value)),
+                          validator: (_) => context
+                              .read<SignInFormBloc>()
+                              .state
+                              .emailAddress
+                              .value
+                              .fold(
+                                (f) => f.maybeMap(
+                                  invalidEmail: (_) => 'Invalid email',
+                                  orElse: () => null,
+                                ),
+                                (_) => null,
+                              ),
+                        ),
+                      ),
+                      // password
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        child: TextFormField(
+                          autocorrect: false,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Password",
+                            icon: Icon(
+                              Icons.vpn_key,
+                              color: Colors.black12,
+                            ),
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              fontFamily: "sofia",
+                            ),
+                          ),
+                          onChanged: (value) => context
+                              .read<SignInFormBloc>()
+                              .add(SignInFormEvent.passwordChanged(value)),
+                          validator: (_) => context
+                              .read<SignInFormBloc>()
+                              .state
+                              .password
+                              .value
+                              .fold(
+                                (f) => f.maybeMap(
+                                  shortPassword: (_) => 'Short password',
+                                  orElse: () => null,
+                                ),
+                                (_) => null,
+                              ),
+                        ),
+                      ),
+                      MaterialButton(
+                        color: Theme.of(context).buttonColor,
+                        onPressed: () {
+                          context.read<SignInFormBloc>().add(
+                              const SignInFormEvent
+                                  .signInWithEmailAndPasswordPressed());
                         },
+                        child: Text('Sign In'),
+                      ),
+                      SizedBox(height: 20.0),
+                      MaterialButton(
+                        color: Colors.red,
+                        onPressed: () {
+                          debugPrint('hihi');
+                          context.read<SignInFormBloc>().add(
+                              const SignInFormEvent.signInWithGooglePressed());
+                        },
+                        child: Text(
+                          'Sign In With Google',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(height: 20.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Dont Have Account?'),
+                          SizedBox(width: 10.0),
+                          InkWell(
+                            child: Text(
+                              'Sign Up',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
+                                color: Colors.cyan[300],
+                              ),
+                            ),
+                            onTap: () {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) => SignUpPage()));
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),
+                  state.isSubmitting
+                      ? Positioned(
+                          left: 0,
+                          right: 0,
+                          top: 0,
+                          bottom: 0,
+                          child: Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        )
+                      : Container(),
                 ],
               ),
             ),

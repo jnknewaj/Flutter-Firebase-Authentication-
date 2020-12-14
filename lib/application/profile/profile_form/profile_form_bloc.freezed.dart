@@ -35,6 +35,20 @@ class _$ProfileFormEventTearOff {
   }
 
 // ignore: unused_element
+  _DescriptionChanged descriptionChanged(String descriptionStr) {
+    return _DescriptionChanged(
+      descriptionStr,
+    );
+  }
+
+// ignore: unused_element
+  _ProfilePicChanged profilePicChanged(File image) {
+    return _ProfilePicChanged(
+      image,
+    );
+  }
+
+// ignore: unused_element
   _Saved saved() {
     return const _Saved();
   }
@@ -58,6 +72,8 @@ mixin _$ProfileFormEvent {
     @required Result initialized(Option<AppUser> initialUserOption),
     @required Result nameChanged(String nameStr),
     @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
     @required Result saved(),
     @required Result thirdPartySignInSaved(AppUser appUser),
   });
@@ -66,6 +82,8 @@ mixin _$ProfileFormEvent {
     Result initialized(Option<AppUser> initialUserOption),
     Result nameChanged(String nameStr),
     Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
     Result saved(),
     Result thirdPartySignInSaved(AppUser appUser),
     @required Result orElse(),
@@ -75,6 +93,8 @@ mixin _$ProfileFormEvent {
     @required Result initialized(_Initialized value),
     @required Result nameChanged(_NameChanged value),
     @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
     @required Result saved(_Saved value),
     @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
   });
@@ -83,6 +103,8 @@ mixin _$ProfileFormEvent {
     Result initialized(_Initialized value),
     Result nameChanged(_NameChanged value),
     Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
     Result saved(_Saved value),
     Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
     @required Result orElse(),
@@ -174,12 +196,16 @@ class _$_Initialized implements _Initialized {
     @required Result initialized(Option<AppUser> initialUserOption),
     @required Result nameChanged(String nameStr),
     @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
     @required Result saved(),
     @required Result thirdPartySignInSaved(AppUser appUser),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return initialized(initialUserOption);
@@ -191,6 +217,8 @@ class _$_Initialized implements _Initialized {
     Result initialized(Option<AppUser> initialUserOption),
     Result nameChanged(String nameStr),
     Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
     Result saved(),
     Result thirdPartySignInSaved(AppUser appUser),
     @required Result orElse(),
@@ -208,12 +236,16 @@ class _$_Initialized implements _Initialized {
     @required Result initialized(_Initialized value),
     @required Result nameChanged(_NameChanged value),
     @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
     @required Result saved(_Saved value),
     @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return initialized(this);
@@ -225,6 +257,8 @@ class _$_Initialized implements _Initialized {
     Result initialized(_Initialized value),
     Result nameChanged(_NameChanged value),
     Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
     Result saved(_Saved value),
     Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
     @required Result orElse(),
@@ -308,12 +342,16 @@ class _$_NameChanged implements _NameChanged {
     @required Result initialized(Option<AppUser> initialUserOption),
     @required Result nameChanged(String nameStr),
     @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
     @required Result saved(),
     @required Result thirdPartySignInSaved(AppUser appUser),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return nameChanged(nameStr);
@@ -325,6 +363,8 @@ class _$_NameChanged implements _NameChanged {
     Result initialized(Option<AppUser> initialUserOption),
     Result nameChanged(String nameStr),
     Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
     Result saved(),
     Result thirdPartySignInSaved(AppUser appUser),
     @required Result orElse(),
@@ -342,12 +382,16 @@ class _$_NameChanged implements _NameChanged {
     @required Result initialized(_Initialized value),
     @required Result nameChanged(_NameChanged value),
     @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
     @required Result saved(_Saved value),
     @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return nameChanged(this);
@@ -359,6 +403,8 @@ class _$_NameChanged implements _NameChanged {
     Result initialized(_Initialized value),
     Result nameChanged(_NameChanged value),
     Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
     Result saved(_Saved value),
     Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
     @required Result orElse(),
@@ -442,12 +488,16 @@ class _$_EmailChanged implements _EmailChanged {
     @required Result initialized(Option<AppUser> initialUserOption),
     @required Result nameChanged(String nameStr),
     @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
     @required Result saved(),
     @required Result thirdPartySignInSaved(AppUser appUser),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return emailChanged(emailStr);
@@ -459,6 +509,8 @@ class _$_EmailChanged implements _EmailChanged {
     Result initialized(Option<AppUser> initialUserOption),
     Result nameChanged(String nameStr),
     Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
     Result saved(),
     Result thirdPartySignInSaved(AppUser appUser),
     @required Result orElse(),
@@ -476,12 +528,16 @@ class _$_EmailChanged implements _EmailChanged {
     @required Result initialized(_Initialized value),
     @required Result nameChanged(_NameChanged value),
     @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
     @required Result saved(_Saved value),
     @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return emailChanged(this);
@@ -493,6 +549,8 @@ class _$_EmailChanged implements _EmailChanged {
     Result initialized(_Initialized value),
     Result nameChanged(_NameChanged value),
     Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
     Result saved(_Saved value),
     Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
     @required Result orElse(),
@@ -510,6 +568,302 @@ abstract class _EmailChanged implements ProfileFormEvent {
 
   String get emailStr;
   _$EmailChangedCopyWith<_EmailChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DescriptionChangedCopyWith<$Res> {
+  factory _$DescriptionChangedCopyWith(
+          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+      __$DescriptionChangedCopyWithImpl<$Res>;
+  $Res call({String descriptionStr});
+}
+
+/// @nodoc
+class __$DescriptionChangedCopyWithImpl<$Res>
+    extends _$ProfileFormEventCopyWithImpl<$Res>
+    implements _$DescriptionChangedCopyWith<$Res> {
+  __$DescriptionChangedCopyWithImpl(
+      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+      : super(_value, (v) => _then(v as _DescriptionChanged));
+
+  @override
+  _DescriptionChanged get _value => super._value as _DescriptionChanged;
+
+  @override
+  $Res call({
+    Object descriptionStr = freezed,
+  }) {
+    return _then(_DescriptionChanged(
+      descriptionStr == freezed
+          ? _value.descriptionStr
+          : descriptionStr as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DescriptionChanged implements _DescriptionChanged {
+  const _$_DescriptionChanged(this.descriptionStr)
+      : assert(descriptionStr != null);
+
+  @override
+  final String descriptionStr;
+
+  @override
+  String toString() {
+    return 'ProfileFormEvent.descriptionChanged(descriptionStr: $descriptionStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DescriptionChanged &&
+            (identical(other.descriptionStr, descriptionStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.descriptionStr, descriptionStr)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(descriptionStr);
+
+  @override
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(Option<AppUser> initialUserOption),
+    @required Result nameChanged(String nameStr),
+    @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
+    @required Result saved(),
+    @required Result thirdPartySignInSaved(AppUser appUser),
+  }) {
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
+    assert(saved != null);
+    assert(thirdPartySignInSaved != null);
+    return descriptionChanged(descriptionStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(Option<AppUser> initialUserOption),
+    Result nameChanged(String nameStr),
+    Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
+    Result saved(),
+    Result thirdPartySignInSaved(AppUser appUser),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (descriptionChanged != null) {
+      return descriptionChanged(descriptionStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
+    @required Result saved(_Saved value),
+    @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
+  }) {
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
+    assert(saved != null);
+    assert(thirdPartySignInSaved != null);
+    return descriptionChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
+    Result saved(_Saved value),
+    Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (descriptionChanged != null) {
+      return descriptionChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DescriptionChanged implements ProfileFormEvent {
+  const factory _DescriptionChanged(String descriptionStr) =
+      _$_DescriptionChanged;
+
+  String get descriptionStr;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ProfilePicChangedCopyWith<$Res> {
+  factory _$ProfilePicChangedCopyWith(
+          _ProfilePicChanged value, $Res Function(_ProfilePicChanged) then) =
+      __$ProfilePicChangedCopyWithImpl<$Res>;
+  $Res call({File image});
+}
+
+/// @nodoc
+class __$ProfilePicChangedCopyWithImpl<$Res>
+    extends _$ProfileFormEventCopyWithImpl<$Res>
+    implements _$ProfilePicChangedCopyWith<$Res> {
+  __$ProfilePicChangedCopyWithImpl(
+      _ProfilePicChanged _value, $Res Function(_ProfilePicChanged) _then)
+      : super(_value, (v) => _then(v as _ProfilePicChanged));
+
+  @override
+  _ProfilePicChanged get _value => super._value as _ProfilePicChanged;
+
+  @override
+  $Res call({
+    Object image = freezed,
+  }) {
+    return _then(_ProfilePicChanged(
+      image == freezed ? _value.image : image as File,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ProfilePicChanged implements _ProfilePicChanged {
+  const _$_ProfilePicChanged(this.image) : assert(image != null);
+
+  @override
+  final File image;
+
+  @override
+  String toString() {
+    return 'ProfileFormEvent.profilePicChanged(image: $image)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ProfilePicChanged &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(image);
+
+  @override
+  _$ProfilePicChangedCopyWith<_ProfilePicChanged> get copyWith =>
+      __$ProfilePicChangedCopyWithImpl<_ProfilePicChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(Option<AppUser> initialUserOption),
+    @required Result nameChanged(String nameStr),
+    @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
+    @required Result saved(),
+    @required Result thirdPartySignInSaved(AppUser appUser),
+  }) {
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
+    assert(saved != null);
+    assert(thirdPartySignInSaved != null);
+    return profilePicChanged(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(Option<AppUser> initialUserOption),
+    Result nameChanged(String nameStr),
+    Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
+    Result saved(),
+    Result thirdPartySignInSaved(AppUser appUser),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (profilePicChanged != null) {
+      return profilePicChanged(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
+    @required Result saved(_Saved value),
+    @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
+  }) {
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
+    assert(saved != null);
+    assert(thirdPartySignInSaved != null);
+    return profilePicChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
+    Result saved(_Saved value),
+    Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (profilePicChanged != null) {
+      return profilePicChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProfilePicChanged implements ProfileFormEvent {
+  const factory _ProfilePicChanged(File image) = _$_ProfilePicChanged;
+
+  File get image;
+  _$ProfilePicChangedCopyWith<_ProfilePicChanged> get copyWith;
 }
 
 /// @nodoc
@@ -551,12 +905,16 @@ class _$_Saved implements _Saved {
     @required Result initialized(Option<AppUser> initialUserOption),
     @required Result nameChanged(String nameStr),
     @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
     @required Result saved(),
     @required Result thirdPartySignInSaved(AppUser appUser),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return saved();
@@ -568,6 +926,8 @@ class _$_Saved implements _Saved {
     Result initialized(Option<AppUser> initialUserOption),
     Result nameChanged(String nameStr),
     Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
     Result saved(),
     Result thirdPartySignInSaved(AppUser appUser),
     @required Result orElse(),
@@ -585,12 +945,16 @@ class _$_Saved implements _Saved {
     @required Result initialized(_Initialized value),
     @required Result nameChanged(_NameChanged value),
     @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
     @required Result saved(_Saved value),
     @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return saved(this);
@@ -602,6 +966,8 @@ class _$_Saved implements _Saved {
     Result initialized(_Initialized value),
     Result nameChanged(_NameChanged value),
     Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
     Result saved(_Saved value),
     Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
     @required Result orElse(),
@@ -694,12 +1060,16 @@ class _$_ThirdPartySignInSaved implements _ThirdPartySignInSaved {
     @required Result initialized(Option<AppUser> initialUserOption),
     @required Result nameChanged(String nameStr),
     @required Result emailChanged(String emailStr),
+    @required Result descriptionChanged(String descriptionStr),
+    @required Result profilePicChanged(File image),
     @required Result saved(),
     @required Result thirdPartySignInSaved(AppUser appUser),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return thirdPartySignInSaved(appUser);
@@ -711,6 +1081,8 @@ class _$_ThirdPartySignInSaved implements _ThirdPartySignInSaved {
     Result initialized(Option<AppUser> initialUserOption),
     Result nameChanged(String nameStr),
     Result emailChanged(String emailStr),
+    Result descriptionChanged(String descriptionStr),
+    Result profilePicChanged(File image),
     Result saved(),
     Result thirdPartySignInSaved(AppUser appUser),
     @required Result orElse(),
@@ -728,12 +1100,16 @@ class _$_ThirdPartySignInSaved implements _ThirdPartySignInSaved {
     @required Result initialized(_Initialized value),
     @required Result nameChanged(_NameChanged value),
     @required Result emailChanged(_EmailChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result profilePicChanged(_ProfilePicChanged value),
     @required Result saved(_Saved value),
     @required Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
     assert(emailChanged != null);
+    assert(descriptionChanged != null);
+    assert(profilePicChanged != null);
     assert(saved != null);
     assert(thirdPartySignInSaved != null);
     return thirdPartySignInSaved(this);
@@ -745,6 +1121,8 @@ class _$_ThirdPartySignInSaved implements _ThirdPartySignInSaved {
     Result initialized(_Initialized value),
     Result nameChanged(_NameChanged value),
     Result emailChanged(_EmailChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result profilePicChanged(_ProfilePicChanged value),
     Result saved(_Saved value),
     Result thirdPartySignInSaved(_ThirdPartySignInSaved value),
     @required Result orElse(),
@@ -780,13 +1158,17 @@ class _$ProfileFormStateTearOff {
       @required
           bool showErrorMessages,
       @required
-          Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption}) {
+          Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption,
+      @required
+          Option<Either<ProfileFailure, String>>
+              imageUploadFaiureOrSuccessOption}) {
     return _ProfileFormState(
       appUser: appUser,
       isEditing: isEditing,
       isSaving: isSaving,
       showErrorMessages: showErrorMessages,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption,
+      imageUploadFaiureOrSuccessOption: imageUploadFaiureOrSuccessOption,
     );
   }
 }
@@ -802,6 +1184,7 @@ mixin _$ProfileFormState {
   bool get isSaving;
   bool get showErrorMessages;
   Option<Either<ProfileFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<ProfileFailure, String>> get imageUploadFaiureOrSuccessOption;
 
   $ProfileFormStateCopyWith<ProfileFormState> get copyWith;
 }
@@ -816,7 +1199,8 @@ abstract class $ProfileFormStateCopyWith<$Res> {
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
-      Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption,
+      Option<Either<ProfileFailure, String>> imageUploadFaiureOrSuccessOption});
 
   $AppUserCopyWith<$Res> get appUser;
 }
@@ -837,6 +1221,7 @@ class _$ProfileFormStateCopyWithImpl<$Res>
     Object isSaving = freezed,
     Object showErrorMessages = freezed,
     Object saveFailureOrSuccessOption = freezed,
+    Object imageUploadFaiureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       appUser: appUser == freezed ? _value.appUser : appUser as AppUser,
@@ -848,6 +1233,11 @@ class _$ProfileFormStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption as Option<Either<ProfileFailure, Unit>>,
+      imageUploadFaiureOrSuccessOption:
+          imageUploadFaiureOrSuccessOption == freezed
+              ? _value.imageUploadFaiureOrSuccessOption
+              : imageUploadFaiureOrSuccessOption
+                  as Option<Either<ProfileFailure, String>>,
     ));
   }
 
@@ -874,7 +1264,8 @@ abstract class _$ProfileFormStateCopyWith<$Res>
       bool isEditing,
       bool isSaving,
       bool showErrorMessages,
-      Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption,
+      Option<Either<ProfileFailure, String>> imageUploadFaiureOrSuccessOption});
 
   @override
   $AppUserCopyWith<$Res> get appUser;
@@ -898,6 +1289,7 @@ class __$ProfileFormStateCopyWithImpl<$Res>
     Object isSaving = freezed,
     Object showErrorMessages = freezed,
     Object saveFailureOrSuccessOption = freezed,
+    Object imageUploadFaiureOrSuccessOption = freezed,
   }) {
     return _then(_ProfileFormState(
       appUser: appUser == freezed ? _value.appUser : appUser as AppUser,
@@ -909,6 +1301,11 @@ class __$ProfileFormStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption as Option<Either<ProfileFailure, Unit>>,
+      imageUploadFaiureOrSuccessOption:
+          imageUploadFaiureOrSuccessOption == freezed
+              ? _value.imageUploadFaiureOrSuccessOption
+              : imageUploadFaiureOrSuccessOption
+                  as Option<Either<ProfileFailure, String>>,
     ));
   }
 }
@@ -920,12 +1317,14 @@ class _$_ProfileFormState implements _ProfileFormState {
       @required this.isEditing,
       @required this.isSaving,
       @required this.showErrorMessages,
-      @required this.saveFailureOrSuccessOption})
+      @required this.saveFailureOrSuccessOption,
+      @required this.imageUploadFaiureOrSuccessOption})
       : assert(appUser != null),
         assert(isEditing != null),
         assert(isSaving != null),
         assert(showErrorMessages != null),
-        assert(saveFailureOrSuccessOption != null);
+        assert(saveFailureOrSuccessOption != null),
+        assert(imageUploadFaiureOrSuccessOption != null);
 
   @override
   final AppUser appUser;
@@ -937,10 +1336,12 @@ class _$_ProfileFormState implements _ProfileFormState {
   final bool showErrorMessages;
   @override
   final Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption;
+  @override
+  final Option<Either<ProfileFailure, String>> imageUploadFaiureOrSuccessOption;
 
   @override
   String toString() {
-    return 'ProfileFormState(appUser: $appUser, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'ProfileFormState(appUser: $appUser, isEditing: $isEditing, isSaving: $isSaving, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption, imageUploadFaiureOrSuccessOption: $imageUploadFaiureOrSuccessOption)';
   }
 
   @override
@@ -963,7 +1364,12 @@ class _$_ProfileFormState implements _ProfileFormState {
                     saveFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
+                    saveFailureOrSuccessOption)) &&
+            (identical(other.imageUploadFaiureOrSuccessOption,
+                    imageUploadFaiureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.imageUploadFaiureOrSuccessOption,
+                    imageUploadFaiureOrSuccessOption)));
   }
 
   @override
@@ -973,7 +1379,8 @@ class _$_ProfileFormState implements _ProfileFormState {
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSaving) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(imageUploadFaiureOrSuccessOption);
 
   @override
   _$ProfileFormStateCopyWith<_ProfileFormState> get copyWith =>
@@ -991,8 +1398,10 @@ abstract class _ProfileFormState implements ProfileFormState {
       @required
           bool showErrorMessages,
       @required
-          Option<Either<ProfileFailure, Unit>>
-              saveFailureOrSuccessOption}) = _$_ProfileFormState;
+          Option<Either<ProfileFailure, Unit>> saveFailureOrSuccessOption,
+      @required
+          Option<Either<ProfileFailure, String>>
+              imageUploadFaiureOrSuccessOption}) = _$_ProfileFormState;
 
   @override
   AppUser get appUser;
@@ -1004,6 +1413,8 @@ abstract class _ProfileFormState implements ProfileFormState {
   bool get showErrorMessages;
   @override
   Option<Either<ProfileFailure, Unit>> get saveFailureOrSuccessOption;
+  @override
+  Option<Either<ProfileFailure, String>> get imageUploadFaiureOrSuccessOption;
   @override
   _$ProfileFormStateCopyWith<_ProfileFormState> get copyWith;
 }

@@ -5,16 +5,17 @@ import 'package:flutter/material.dart';
 class CircularImageHolder extends StatelessWidget {
   final File imageFile;
   final String imageUrl;
-  final double scrWidth;
   final IconData icon;
   final Function() onImageAdded;
   final double imageSize;
 
+  /// Provide imageFile if the source of image is a file instead of url.
+  /// 
+  /// If imageUrl is null, a default image will be fetched from network.
   const CircularImageHolder({
     Key key,
     this.imageFile,
     @required this.imageUrl,
-    this.scrWidth,
     this.icon,
     this.onImageAdded,
     @required this.imageSize,

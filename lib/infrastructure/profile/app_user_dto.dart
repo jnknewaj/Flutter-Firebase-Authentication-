@@ -16,6 +16,8 @@ abstract class AppUserDto implements _$AppUserDto {
     @required String uid,
     @required String name,
     @required String email,
+    String description,
+    String profilePictureUrl,
     @required @ServerTimestampConverter() FieldValue serverTimeStamp,
   }) = _AppUserDto;
 
@@ -24,6 +26,8 @@ abstract class AppUserDto implements _$AppUserDto {
       uid: appUser.id.getOrCrash(),
       name: appUser.name.getOrCrash(),
       email: appUser.emailAddress.getOrCrash(),
+      description: appUser.description?.getOrCrash(),
+      profilePictureUrl: appUser.profilePictureUrl,
       serverTimeStamp: FieldValue.serverTimestamp(),
     );
   }
@@ -32,7 +36,9 @@ abstract class AppUserDto implements _$AppUserDto {
     return AppUser(
       id: UniqueId.fromUniqueString(uid),
       emailAddress: EmailAddress(email),
-      name: Name(name),
+      name: TextData(name),
+      description: TextData(description),
+      profilePictureUrl: profilePictureUrl,
     );
   }
 

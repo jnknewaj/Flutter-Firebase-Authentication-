@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:authentication/domain/auth/value_objects.dart';
 import 'package:authentication/domain/core/value_objects.dart';
 import 'package:bloc/bloc.dart';
@@ -14,6 +15,8 @@ part 'profile_form_bloc.freezed.dart';
 part 'profile_form_event.dart';
 part 'profile_form_state.dart';
 
+/// initial user profile just have name and email field (validated)
+/// called only after successful user registration
 @injectable
 class ProfileFormBloc extends Bloc<ProfileFormEvent, ProfileFormState> {
   final IAppUserRepository _repository;
@@ -44,7 +47,36 @@ class ProfileFormBloc extends Bloc<ProfileFormEvent, ProfileFormState> {
       },
       nameChanged: (e) async* {
         yield state.copyWith(
-          appUser: state.appUser.copyWith(name: Name(e.nameStr)),
+          appUser: state.appUser.copyWith(name: TextData(e.nameStr)),
+          saveFailureOrSuccessOption: none(),
+        );
+      },
+      descriptionChanged: (e) async* {
+        yield state.copyWith(
+          appUser:
+              state.appUser.copyWith(description: TextData(e.descriptionStr)),
+          saveFailureOrSuccessOption: none(),
+        );
+      },
+      profilePicChanged: (e) async* {
+        Either<ProfileFailure, String> failureOrSuccess;
+        yield state.copyWith(
+          isSaving: true,
+          saveFailureOrSuccessOption: none(),
+        );
+        if (state.appUser.failureOption.isNone()) {
+          if (e.image != null) {
+            failureOrSuccess = await _repository.uploadProfileImage(e.image);
+          }
+        }
+        yield state.copyWith(
+          appUser: state.appUser.copyWith(
+            profilePictureUrl: failureOrSuccess.fold(
+              (l) => null,
+              (r) => r,
+            ),
+          ),
+          imageUploadFaiureOrSuccessOption: optionOf(failureOrSuccess),
           saveFailureOrSuccessOption: none(),
         );
       },

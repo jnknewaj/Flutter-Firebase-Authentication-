@@ -13,14 +13,17 @@ abstract class AppUser implements _$AppUser {
 
   const factory AppUser({
     @required UniqueId id,
-    @required Name name,
+    @required TextData name,
     @required EmailAddress emailAddress,
+    String profilePictureUrl,
+    TextData description,
   }) = _AppUser;
 
   factory AppUser.empty() => _AppUser(
         id: UniqueId(),
-        name: Name(''),
+        name: TextData(''),
         emailAddress: EmailAddress(''),
+        description: TextData(''),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

@@ -84,7 +84,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           await _firebaseAuth.signInWithCredential(credential);
       final appUser = AppUser(
         id: UniqueId(),
-        name: Name(userCredential.user.displayName),
+        name: TextData(userCredential.user.displayName),
         emailAddress: EmailAddress(userCredential.user.email),
       );
       return right(appUser);

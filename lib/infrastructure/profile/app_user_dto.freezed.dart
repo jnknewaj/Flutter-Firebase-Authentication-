@@ -21,11 +21,15 @@ class _$AppUserDtoTearOff {
       {@required String uid,
       @required String name,
       @required String email,
+      String description,
+      String profilePictureUrl,
       @required @ServerTimestampConverter() FieldValue serverTimeStamp}) {
     return _AppUserDto(
       uid: uid,
       name: name,
       email: email,
+      description: description,
+      profilePictureUrl: profilePictureUrl,
       serverTimeStamp: serverTimeStamp,
     );
   }
@@ -45,6 +49,8 @@ mixin _$AppUserDto {
   String get uid;
   String get name;
   String get email;
+  String get description;
+  String get profilePictureUrl;
   @ServerTimestampConverter()
   FieldValue get serverTimeStamp;
 
@@ -61,6 +67,8 @@ abstract class $AppUserDtoCopyWith<$Res> {
       {String uid,
       String name,
       String email,
+      String description,
+      String profilePictureUrl,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
@@ -77,12 +85,19 @@ class _$AppUserDtoCopyWithImpl<$Res> implements $AppUserDtoCopyWith<$Res> {
     Object uid = freezed,
     Object name = freezed,
     Object email = freezed,
+    Object description = freezed,
+    Object profilePictureUrl = freezed,
     Object serverTimeStamp = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed ? _value.uid : uid as String,
       name: name == freezed ? _value.name : name as String,
       email: email == freezed ? _value.email : email as String,
+      description:
+          description == freezed ? _value.description : description as String,
+      profilePictureUrl: profilePictureUrl == freezed
+          ? _value.profilePictureUrl
+          : profilePictureUrl as String,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
           : serverTimeStamp as FieldValue,
@@ -100,6 +115,8 @@ abstract class _$AppUserDtoCopyWith<$Res> implements $AppUserDtoCopyWith<$Res> {
       {String uid,
       String name,
       String email,
+      String description,
+      String profilePictureUrl,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
@@ -118,12 +135,19 @@ class __$AppUserDtoCopyWithImpl<$Res> extends _$AppUserDtoCopyWithImpl<$Res>
     Object uid = freezed,
     Object name = freezed,
     Object email = freezed,
+    Object description = freezed,
+    Object profilePictureUrl = freezed,
     Object serverTimeStamp = freezed,
   }) {
     return _then(_AppUserDto(
       uid: uid == freezed ? _value.uid : uid as String,
       name: name == freezed ? _value.name : name as String,
       email: email == freezed ? _value.email : email as String,
+      description:
+          description == freezed ? _value.description : description as String,
+      profilePictureUrl: profilePictureUrl == freezed
+          ? _value.profilePictureUrl
+          : profilePictureUrl as String,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
           : serverTimeStamp as FieldValue,
@@ -139,6 +163,8 @@ class _$_AppUserDto extends _AppUserDto {
       {@required this.uid,
       @required this.name,
       @required this.email,
+      this.description,
+      this.profilePictureUrl,
       @required @ServerTimestampConverter() this.serverTimeStamp})
       : assert(uid != null),
         assert(name != null),
@@ -156,12 +182,16 @@ class _$_AppUserDto extends _AppUserDto {
   @override
   final String email;
   @override
+  final String description;
+  @override
+  final String profilePictureUrl;
+  @override
   @ServerTimestampConverter()
   final FieldValue serverTimeStamp;
 
   @override
   String toString() {
-    return 'AppUserDto(uid: $uid, name: $name, email: $email, serverTimeStamp: $serverTimeStamp)';
+    return 'AppUserDto(uid: $uid, name: $name, email: $email, description: $description, profilePictureUrl: $profilePictureUrl, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -174,6 +204,12 @@ class _$_AppUserDto extends _AppUserDto {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.profilePictureUrl, profilePictureUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.profilePictureUrl, profilePictureUrl)) &&
             (identical(other.serverTimeStamp, serverTimeStamp) ||
                 const DeepCollectionEquality()
                     .equals(other.serverTimeStamp, serverTimeStamp)));
@@ -185,6 +221,8 @@ class _$_AppUserDto extends _AppUserDto {
       const DeepCollectionEquality().hash(uid) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(profilePictureUrl) ^
       const DeepCollectionEquality().hash(serverTimeStamp);
 
   @override
@@ -203,6 +241,8 @@ abstract class _AppUserDto extends AppUserDto {
           {@required String uid,
           @required String name,
           @required String email,
+          String description,
+          String profilePictureUrl,
           @required @ServerTimestampConverter() FieldValue serverTimeStamp}) =
       _$_AppUserDto;
 
@@ -215,6 +255,10 @@ abstract class _AppUserDto extends AppUserDto {
   String get name;
   @override
   String get email;
+  @override
+  String get description;
+  @override
+  String get profilePictureUrl;
   @override
   @ServerTimestampConverter()
   FieldValue get serverTimeStamp;

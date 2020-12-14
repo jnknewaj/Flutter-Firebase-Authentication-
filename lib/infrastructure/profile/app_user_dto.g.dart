@@ -11,6 +11,8 @@ _$_AppUserDto _$_$_AppUserDtoFromJson(Map<String, dynamic> json) {
     uid: json['uid'] as String,
     name: json['name'] as String,
     email: json['email'] as String,
+    description: json['description'] as String,
+    profilePictureUrl: json['profilePictureUrl'] as String,
     serverTimeStamp:
         const ServerTimestampConverter().fromJson(json['serverTimeStamp']),
   );
@@ -21,6 +23,8 @@ Map<String, dynamic> _$_$_AppUserDtoToJson(_$_AppUserDto instance) =>
       'uid': instance.uid,
       'name': instance.name,
       'email': instance.email,
+      'description': instance.description,
+      'profilePictureUrl': instance.profilePictureUrl,
       'serverTimeStamp':
           const ServerTimestampConverter().toJson(instance.serverTimeStamp),
     };

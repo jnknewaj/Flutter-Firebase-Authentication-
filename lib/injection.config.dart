@@ -10,6 +10,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uuid/uuid.dart';
 
 import 'infrastructure/profile/app_user_repository.dart';
 import 'application/auth/auth_check/auth_check_bloc.dart';
@@ -20,6 +21,7 @@ import 'domain/auth/i_auth_facade.dart';
 import 'application/profile/profile_form/profile_form_bloc.dart';
 import 'application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'infrastructure/core/third_party_packages_injectable_module.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
@@ -31,25 +33,34 @@ GetIt $initGetIt(
 }) {
   final gh = GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
+  final thirdPartyPackagesInjectableModule =
+      _$ThirdPartyPackagesInjectableModule();
   gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
   gh.lazySingleton<FirebaseFirestore>(
       () => firebaseInjectableModule.firebaseFirestore);
   gh.lazySingleton<FirebaseStorage>(
       () => firebaseInjectableModule.firebaseStorage);
   gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googeSignIn);
-  gh.lazySingleton<IAppUserRepository>(() =>
-      AppUserRepository(get<FirebaseFirestore>(), get<FirebaseStorage>()));
   gh.lazySingleton<IAuthFacade>(() => FirebaseAuthFacade(
         get<FirebaseAuth>(),
         get<GoogleSignIn>(),
         get<FirebaseFirestore>(),
       ));
+  gh.factory<SignInFormBloc>(() => SignInFormBloc(get<IAuthFacade>()));
+  gh.lazySingleton<Uuid>(() => thirdPartyPackagesInjectableModule.uuid);
+  gh.factory<AuthCheckBloc>(() => AuthCheckBloc(get<IAuthFacade>()));
+  gh.lazySingleton<IAppUserRepository>(() => AppUserRepository(
+        get<FirebaseFirestore>(),
+        get<FirebaseStorage>(),
+        get<Uuid>(),
+      ));
   gh.factory<ProfileFormBloc>(() => ProfileFormBloc(get<IAppUserRepository>()));
   gh.factory<ProfileWatcherBloc>(
       () => ProfileWatcherBloc(get<IAppUserRepository>()));
-  gh.factory<SignInFormBloc>(() => SignInFormBloc(get<IAuthFacade>()));
-  gh.factory<AuthCheckBloc>(() => AuthCheckBloc(get<IAuthFacade>()));
   return get;
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}
+
+class _$ThirdPartyPackagesInjectableModule
+    extends ThirdPartyPackagesInjectableModule {}

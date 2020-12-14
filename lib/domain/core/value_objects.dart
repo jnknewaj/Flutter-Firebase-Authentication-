@@ -59,16 +59,16 @@ class UniqueId extends ValueObject<String> {
   const UniqueId._(this.value);
 }
 
-class Name extends ValueObject<String> {
+class TextData extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  static const int maxLength = 50;
+  static const int maxLength = 200;
 
-  factory Name(String input) {
+  factory TextData(String input) {
     assert(input != null);
-    return Name._(validateMaxStringLength(input, maxLength));
+    return TextData._(validateMaxStringLength(input, maxLength));
   }
 
-  const Name._(this.value);
+  const TextData._(this.value);
 }

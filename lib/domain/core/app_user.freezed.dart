@@ -16,12 +16,16 @@ class _$AppUserTearOff {
 // ignore: unused_element
   _AppUser call(
       {@required UniqueId id,
-      @required Name name,
-      @required EmailAddress emailAddress}) {
+      @required TextData name,
+      @required EmailAddress emailAddress,
+      String profilePictureUrl,
+      TextData description}) {
     return _AppUser(
       id: id,
       name: name,
       emailAddress: emailAddress,
+      profilePictureUrl: profilePictureUrl,
+      description: description,
     );
   }
 }
@@ -33,8 +37,10 @@ const $AppUser = _$AppUserTearOff();
 /// @nodoc
 mixin _$AppUser {
   UniqueId get id;
-  Name get name;
+  TextData get name;
   EmailAddress get emailAddress;
+  String get profilePictureUrl;
+  TextData get description;
 
   $AppUserCopyWith<AppUser> get copyWith;
 }
@@ -43,7 +49,12 @@ mixin _$AppUser {
 abstract class $AppUserCopyWith<$Res> {
   factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
       _$AppUserCopyWithImpl<$Res>;
-  $Res call({UniqueId id, Name name, EmailAddress emailAddress});
+  $Res call(
+      {UniqueId id,
+      TextData name,
+      EmailAddress emailAddress,
+      String profilePictureUrl,
+      TextData description});
 }
 
 /// @nodoc
@@ -59,13 +70,20 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
     Object id = freezed,
     Object name = freezed,
     Object emailAddress = freezed,
+    Object profilePictureUrl = freezed,
+    Object description = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
+      name: name == freezed ? _value.name : name as TextData,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
+      profilePictureUrl: profilePictureUrl == freezed
+          ? _value.profilePictureUrl
+          : profilePictureUrl as String,
+      description:
+          description == freezed ? _value.description : description as TextData,
     ));
   }
 }
@@ -75,7 +93,12 @@ abstract class _$AppUserCopyWith<$Res> implements $AppUserCopyWith<$Res> {
   factory _$AppUserCopyWith(_AppUser value, $Res Function(_AppUser) then) =
       __$AppUserCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, Name name, EmailAddress emailAddress});
+  $Res call(
+      {UniqueId id,
+      TextData name,
+      EmailAddress emailAddress,
+      String profilePictureUrl,
+      TextData description});
 }
 
 /// @nodoc
@@ -92,13 +115,20 @@ class __$AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
     Object id = freezed,
     Object name = freezed,
     Object emailAddress = freezed,
+    Object profilePictureUrl = freezed,
+    Object description = freezed,
   }) {
     return _then(_AppUser(
       id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as Name,
+      name: name == freezed ? _value.name : name as TextData,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
+      profilePictureUrl: profilePictureUrl == freezed
+          ? _value.profilePictureUrl
+          : profilePictureUrl as String,
+      description:
+          description == freezed ? _value.description : description as TextData,
     ));
   }
 }
@@ -106,7 +136,11 @@ class __$AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
 /// @nodoc
 class _$_AppUser extends _AppUser {
   const _$_AppUser(
-      {@required this.id, @required this.name, @required this.emailAddress})
+      {@required this.id,
+      @required this.name,
+      @required this.emailAddress,
+      this.profilePictureUrl,
+      this.description})
       : assert(id != null),
         assert(name != null),
         assert(emailAddress != null),
@@ -115,13 +149,17 @@ class _$_AppUser extends _AppUser {
   @override
   final UniqueId id;
   @override
-  final Name name;
+  final TextData name;
   @override
   final EmailAddress emailAddress;
+  @override
+  final String profilePictureUrl;
+  @override
+  final TextData description;
 
   @override
   String toString() {
-    return 'AppUser(id: $id, name: $name, emailAddress: $emailAddress)';
+    return 'AppUser(id: $id, name: $name, emailAddress: $emailAddress, profilePictureUrl: $profilePictureUrl, description: $description)';
   }
 
   @override
@@ -134,7 +172,13 @@ class _$_AppUser extends _AppUser {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)));
+                    .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.profilePictureUrl, profilePictureUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.profilePictureUrl, profilePictureUrl)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)));
   }
 
   @override
@@ -142,7 +186,9 @@ class _$_AppUser extends _AppUser {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(emailAddress);
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(profilePictureUrl) ^
+      const DeepCollectionEquality().hash(description);
 
   @override
   _$AppUserCopyWith<_AppUser> get copyWith =>
@@ -153,15 +199,21 @@ abstract class _AppUser extends AppUser {
   const _AppUser._() : super._();
   const factory _AppUser(
       {@required UniqueId id,
-      @required Name name,
-      @required EmailAddress emailAddress}) = _$_AppUser;
+      @required TextData name,
+      @required EmailAddress emailAddress,
+      String profilePictureUrl,
+      TextData description}) = _$_AppUser;
 
   @override
   UniqueId get id;
   @override
-  Name get name;
+  TextData get name;
   @override
   EmailAddress get emailAddress;
+  @override
+  String get profilePictureUrl;
+  @override
+  TextData get description;
   @override
   _$AppUserCopyWith<_AppUser> get copyWith;
 }
