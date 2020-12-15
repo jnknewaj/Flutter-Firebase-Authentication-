@@ -250,7 +250,6 @@ class SignInForm extends StatelessWidget {
                       MaterialButton(
                         color: Colors.red,
                         onPressed: () {
-                          debugPrint('hihi');
                           context.read<SignInFormBloc>().add(
                               const SignInFormEvent.signInWithGooglePressed());
                         },

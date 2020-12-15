@@ -1,4 +1,3 @@
-// @Entity
 import 'package:authentication/domain/auth/value_objects.dart';
 import 'package:authentication/domain/core/failures.dart';
 import 'package:authentication/domain/core/value_objects.dart';
@@ -7,6 +6,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'app_user.freezed.dart';
 
+/// If any field is added or removed [name, decription], remember to update [AppUser] object
+///  created in signInWithGoogle() funtion in [FirebaseAuthFacade]
+
+// @Entity
 @freezed
 abstract class AppUser implements _$AppUser {
   const AppUser._();

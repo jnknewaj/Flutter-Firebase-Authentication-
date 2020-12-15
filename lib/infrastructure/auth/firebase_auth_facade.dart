@@ -86,6 +86,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         id: UniqueId(),
         name: TextData(userCredential.user.displayName),
         emailAddress: EmailAddress(userCredential.user.email),
+        description: TextData(''),
       );
       return right(appUser);
     } on FirebaseAuthException catch (_) {
