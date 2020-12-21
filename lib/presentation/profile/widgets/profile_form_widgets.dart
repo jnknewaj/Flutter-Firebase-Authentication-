@@ -75,8 +75,7 @@ class _ProfileFormWidgetsState extends State<ProfileFormWidgets> {
                 ),
                 const SliverToBoxAdapter(child: NameField()),
                 const SliverToBoxAdapter(child: DescriptionField()),
-                SliverFillRemaining(
-                  hasScrollBody: false,
+                SliverToBoxAdapter(
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: GradientButton(
@@ -92,6 +91,7 @@ class _ProfileFormWidgetsState extends State<ProfileFormWidgets> {
                         colors: [Colors.blue, Colors.white],
                       ),
                       text: 'Update Profile',
+                      width: 160,
                     ),
                   ),
                 ),
