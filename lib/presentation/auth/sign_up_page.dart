@@ -14,7 +14,7 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign In'),
+        title: const Text('Sign In'),
       ),
       body: MultiBlocProvider(
         providers: [
@@ -28,7 +28,7 @@ class SignUpPage extends StatelessWidget {
             create: (context) => getIt<ProfileFormBloc>(),
           ),
         ],
-        child: SignUpForm(),
+        child: const SignUpForm(),
       ),
     );
   }
@@ -153,7 +153,7 @@ class SignUpForm extends StatelessWidget {
                         // text
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(
+                          child: const Text(
                             "Sign Up",
                             style: TextStyle(
                               fontWeight: FontWeight.w800,
@@ -178,7 +178,7 @@ class SignUpForm extends StatelessWidget {
                                   .read<ProfileFormBloc>()
                                   .add(ProfileFormEvent.nameChanged(value));
                             },
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               hintText: "Name",
                               icon: Icon(
@@ -222,7 +222,7 @@ class SignUpForm extends StatelessWidget {
                                   ),
                                   (_) => null,
                                 ),
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               hintText: "Email",
                               icon: Icon(
@@ -242,7 +242,7 @@ class SignUpForm extends StatelessWidget {
                           child: TextFormField(
                             autocorrect: false,
                             obscureText: true,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               hintText: "Password",
                               icon: Icon(
@@ -282,7 +282,7 @@ class SignUpForm extends StatelessWidget {
                                 );
                           },
                         ),
-                        SizedBox(height: 20.0),
+                        const SizedBox(height: 20.0),
                         AuthButton(
                           item: SocialItem.google,
                           onPressed: () {
@@ -294,10 +294,15 @@ class SignUpForm extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Already Have Account?'),
-                            SizedBox(width: 10.0),
+                            const Text('Already Have Account?'),
+                            const SizedBox(width: 10.0),
                             InkWell(
-                              child: Text(
+                              onTap: () {
+                                Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                        builder: (context) => SignInPage()));
+                              },
+                              child: const Text(
                                 'Sign In',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -305,18 +310,13 @@ class SignUpForm extends StatelessWidget {
                                   color: Colors.teal,
                                 ),
                               ),
-                              onTap: () {
-                                Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                        builder: (context) => SignInPage()));
-                              },
                             ),
                           ],
                         ),
                       ],
                     ),
                     state.isSubmitting
-                        ? Positioned(
+                        ? const Positioned(
                             left: 0,
                             right: 0,
                             top: 0,

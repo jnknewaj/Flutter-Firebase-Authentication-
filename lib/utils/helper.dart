@@ -9,7 +9,7 @@ class Helper {
   }
 
   static Future<File> pickImageFromGallery() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    final image = await ImagePicker.pickImage(source: ImageSource.gallery);
     return image;
   }
 

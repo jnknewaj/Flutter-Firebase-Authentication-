@@ -6,6 +6,7 @@ part of 'app_user_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+// ignore: non_constant_identifier_names
 _$_AppUserDto _$_$_AppUserDtoFromJson(Map<String, dynamic> json) {
   return _$_AppUserDto(
     uid: json['uid'] as String,
@@ -18,6 +19,7 @@ _$_AppUserDto _$_$_AppUserDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
+// ignore: non_constant_identifier_names
 Map<String, dynamic> _$_$_AppUserDtoToJson(_$_AppUserDto instance) =>
     <String, dynamic>{
       'uid': instance.uid,

@@ -15,8 +15,8 @@ class ProfilePage extends StatelessWidget {
       child: BlocBuilder<ProfileWatcherBloc, ProfileWatcherState>(
         builder: (context, state) {
           return state.map(
-            initial: (s) => Center(child: CircularProgressIndicator()),
-            loading: (s) => CircularProgressIndicator(),
+            initial: (s) => const Center(child: CircularProgressIndicator()),
+            loading: (s) => const CircularProgressIndicator(),
             loaded: (s) => _ProfilePageUi(appUser: s.appUser),
             failure: (f) {
               return BillboardText(
@@ -43,10 +43,10 @@ class _ProfilePageUi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
         actions: [
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: const Icon(Icons.edit),
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => ProfileFormPage(appUser: appUser)));

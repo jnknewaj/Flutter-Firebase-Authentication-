@@ -47,7 +47,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         );
       },
       signInWithGooglePressed: (e) async* {
-        print('Event Trigerred!');
         yield state.copyWith(
           isSubmitting: true,
           authFailureOrSuccessOption: none(),

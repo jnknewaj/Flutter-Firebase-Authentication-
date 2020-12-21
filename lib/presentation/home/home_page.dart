@@ -22,10 +22,10 @@ class HomePage extends StatelessWidget {
       ],
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Firebase Authentication'),
+          title: const Text('Firebase Authentication'),
         ),
         drawer: DrawerWidget(),
-        body: Center(
+        body: const Center(
           child: BillboardText(
             text: 'Hello Firebase',
             textType: TextType.normal,
@@ -59,7 +59,7 @@ class DrawerWidget extends StatelessWidget {
                   loading: (_) => Container(),
                   loaded: (s) {
                     return DrawerHeader(
-                      decoration: BoxDecoration(color: Colors.pink),
+                      decoration: const BoxDecoration(color: Colors.pink),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -82,24 +82,24 @@ class DrawerWidget extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.people),
-                  title: Text('Profile'),
+                  leading: const Icon(Icons.people),
+                  title: const Text('Profile'),
                   onTap: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => ProfilePage()));
                   },
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
-                  leading: Icon(Icons.create),
-                  title: Text('Sign Out'),
+                  leading: const Icon(Icons.create),
+                  title: const Text('Sign Out'),
                   onTap: () {
                     context
                         .read<AuthCheckBloc>()
                         .add(const AuthCheckEvent.signOutPressed());
                   },
                 ),
-                Divider(),
+                const Divider(),
               ],
             ),
           );

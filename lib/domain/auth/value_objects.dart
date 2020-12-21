@@ -16,7 +16,7 @@ class EmailAddress extends ValueObject<String> {
     );
   }
 
-  EmailAddress._(this.value);
+  const EmailAddress._(this.value);
 }
 
 @immutable
@@ -31,5 +31,5 @@ class Password extends ValueObject<String> {
     );
   }
 
-  Password._(this.value);
+  const Password._(this.value);
 }

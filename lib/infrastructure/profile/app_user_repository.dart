@@ -50,16 +50,15 @@ class AppUserRepository implements IAppUserRepository {
       //     .map((event) => right(AppUserDto.fromFirestore(event).toDomain()));
       yield* userDocRef.snapshots().map((event) {
         final appUserDto = AppUserDto.fromFirestore(event);
-        print(':::::::DTO::::::: ${appUserDto.toString()}');
-        final appUser = appUserDto.toDomain(); // toDomain() culprit
-        print(':::::::::::::: ${appUser.toString()}');
+        appUserDto.toDomain(); // toDomain() culprit
         return right(AppUserDto.fromFirestore(event).toDomain());
       });
     } catch (e) {
-      yield left(ProfileFailure.unknownFailure());
+      yield left(const ProfileFailure.unknownFailure());
     }
   }
 
+  // todo cover it later
   @override
   Future<Either<ProfileFailure, AppUser>> getAppUser() async {
     // try {
@@ -68,6 +67,7 @@ class AppUserRepository implements IAppUserRepository {
     //   return right(AppUserDto.fromFirestore(event).toDomain());
     // } catch (e) {}
     // return left(const ProfileFailure.unknownFailure());
+    return null;
   }
 
   @override

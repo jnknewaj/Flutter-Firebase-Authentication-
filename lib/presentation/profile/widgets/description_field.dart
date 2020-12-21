@@ -28,7 +28,6 @@ class DescriptionField extends HookWidget {
               border: OutlineInputBorder(),
             ),
             maxLength: TextData.maxLength,
-            maxLengthEnforced: true,
             maxLines: null,
             minLines: 1,
             onChanged: (value) => context

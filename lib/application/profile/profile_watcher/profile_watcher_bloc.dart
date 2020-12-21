@@ -40,7 +40,6 @@ class ProfileWatcherBloc
           (f) => ProfileWatcherState.failure(f),
           //(user) => ProfileWatcherState.loaded(user),
           (user) {
-            print('user email ::::::: ${user.emailAddress}');
             return ProfileWatcherState.loaded(user);
           },
         );

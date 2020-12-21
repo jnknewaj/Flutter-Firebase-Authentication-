@@ -19,7 +19,7 @@ class ProfileFormPage extends StatelessWidget {
         ..add(ProfileFormEvent.initialized(optionOf(appUser))),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Edit Profile'),
+          title: const Text('Edit Profile'),
         ),
         body: BlocConsumer<ProfileFormBloc, ProfileFormState>(
           listenWhen: (prev, curr) =>
@@ -58,7 +58,7 @@ class ProfileFormPage extends StatelessWidget {
                           height: 80.0,
                           width: 80.0,
                           color: Colors.teal,
-                          child: SpinKitWave(color: Colors.white),
+                          child: const SpinKitWave(color: Colors.white),
                         ),
                       )
                     : Container(),

@@ -21,13 +21,9 @@ class ProfileFormWidgets extends StatefulWidget {
 
 class _ProfileFormWidgetsState extends State<ProfileFormWidgets> {
   File imageFile;
-  double _scrWidth, _scrHeight;
 
   @override
   Widget build(BuildContext context) {
-    _scrWidth = MediaQuery.of(context).size.width;
-    _scrHeight = MediaQuery.of(context).size.height;
-
     return BlocListener<ProfileFormBloc, ProfileFormState>(
       listener: (context, state) {
         state.imageUploadFaiureOrSuccessOption.fold(
