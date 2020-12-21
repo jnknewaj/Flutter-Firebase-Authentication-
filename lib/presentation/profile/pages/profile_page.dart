@@ -2,10 +2,9 @@ import 'package:authentication/application/profile/profile_watcher/profile_watch
 import 'package:authentication/domain/core/app_user.dart';
 import 'package:authentication/injection.dart';
 import 'package:authentication/presentation/profile/pages/profile_form_page.dart';
-import 'package:authentication/presentation/widgets/bilboard_text.dart';
-import 'package:authentication/presentation/widgets/circular_image_holder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:super_ui/super_ui.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -20,12 +19,12 @@ class ProfilePage extends StatelessWidget {
             loading: (s) => CircularProgressIndicator(),
             loaded: (s) => _ProfilePageUi(appUser: s.appUser),
             failure: (f) {
-              return BilboardText(
+              return BillboardText(
                 text: f.failure.map(
                   insufficientPermission: (_) => 'Insufficient Permission',
                   unknownFailure: (_) => 'Unknown Failure',
                 ),
-                textType: TextType.Error,
+                textType: TextType.error,
               );
             },
           );

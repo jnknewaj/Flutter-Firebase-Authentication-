@@ -7,6 +7,7 @@ import 'package:authentication/presentation/home/home_page.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:super_ui/super_ui.dart';
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -271,29 +272,24 @@ class SignUpForm extends StatelessWidget {
                           ),
                         ),
                         // sign up btn
-                        MaterialButton(
-                          color: Theme.of(context).buttonColor,
+                        SuperButton(
+                          text: 'Sign Up',
+                          buttonColor: Theme.of(context).buttonColor,
                           onPressed: () {
                             context.read<SignInFormBloc>().add(
                                   const SignInFormEvent
                                       .registerWithEmailAndPasswordPressed(),
                                 );
                           },
-                          child: Text('Sign Up'),
                         ),
                         SizedBox(height: 20.0),
-                        // google sign in button
-                        MaterialButton(
-                          color: Colors.red,
+                        AuthButton(
+                          item: SocialItem.google,
                           onPressed: () {
                             context.read<SignInFormBloc>().add(
                                 const SignInFormEvent
                                     .signInWithGooglePressed());
                           },
-                          child: Text(
-                            'Sign In With Google',
-                            style: TextStyle(color: Colors.white),
-                          ),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,

@@ -3,10 +3,9 @@ import 'package:authentication/application/profile/profile_watcher/profile_watch
 import 'package:authentication/injection.dart';
 import 'package:authentication/presentation/auth/sign_in_page.dart';
 import 'package:authentication/presentation/profile/pages/profile_page.dart';
-import 'package:authentication/presentation/widgets/bilboard_text.dart';
-import 'package:authentication/presentation/widgets/circular_image_holder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:super_ui/super_ui.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -27,9 +26,9 @@ class HomePage extends StatelessWidget {
         ),
         drawer: DrawerWidget(),
         body: Center(
-          child: BilboardText(
+          child: BillboardText(
             text: 'Hello Firebase',
-            textType: TextType.Normal,
+            textType: TextType.normal,
           ),
         ),
       ),
@@ -74,12 +73,12 @@ class DrawerWidget extends StatelessWidget {
                       ),
                     );
                   },
-                  failure: (failure) => BilboardText(
+                  failure: (failure) => BillboardText(
                     text: failure.failure.map(
                       insufficientPermission: (_) => 'Insufficient Permission',
                       unknownFailure: (_) => 'Unknown Failure',
                     ),
-                    textType: TextType.Error,
+                    textType: TextType.error,
                   ),
                 ),
                 ListTile(

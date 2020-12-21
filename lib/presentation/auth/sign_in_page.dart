@@ -7,6 +7,7 @@ import 'package:authentication/presentation/home/home_page.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:super_ui/super_ui.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -237,26 +238,22 @@ class SignInForm extends StatelessWidget {
                               ),
                         ),
                       ),
-                      MaterialButton(
-                        color: Theme.of(context).buttonColor,
+                      SuperButton(
+                        buttonColor: Theme.of(context).buttonColor,
                         onPressed: () {
                           context.read<SignInFormBloc>().add(
                               const SignInFormEvent
                                   .signInWithEmailAndPasswordPressed());
                         },
-                        child: Text('Sign In'),
+                        text: 'Sign In',
                       ),
                       SizedBox(height: 20.0),
-                      MaterialButton(
-                        color: Colors.red,
+                      AuthButton(
+                        item: SocialItem.google,
                         onPressed: () {
                           context.read<SignInFormBloc>().add(
                               const SignInFormEvent.signInWithGooglePressed());
                         },
-                        child: Text(
-                          'Sign In With Google',
-                          style: TextStyle(color: Colors.white),
-                        ),
                       ),
                       SizedBox(height: 20.0),
                       Row(
