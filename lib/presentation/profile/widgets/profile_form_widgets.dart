@@ -87,9 +87,8 @@ class _ProfileFormWidgetsState extends State<ProfileFormWidgets> {
                                 .read<ProfileFormBloc>()
                                 .add(const ProfileFormEvent.saved());
                       },
-                      gradient: const LinearGradient(
-                        colors: [Colors.blue, Colors.white],
-                      ),
+                      gradient: LinearGradient(
+                          List: const [Colors.blue, Colors.white]),
                       text: 'Update Profile',
                       width: 160,
                     ),
